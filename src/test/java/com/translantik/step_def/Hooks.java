@@ -6,7 +6,6 @@ In the class we will be able to pass pre- & post- conditions to
  */
 
 import com.translantik.pages.DashBoardPage;
-import com.translantik.pages.DashboardPage;
 import com.translantik.pages.FleetVehiclePage;
 import com.translantik.pages.TranslantikLoginPage;
 import com.translantik.utilities.ConfigurationReader;

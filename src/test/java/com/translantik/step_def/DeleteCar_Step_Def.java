@@ -1,7 +1,6 @@
 package com.translantik.step_def;
 
 import com.translantik.pages.DashBoardPage;
-import com.translantik.pages.DashboardPage;
 import com.translantik.pages.FleetVehiclePage;
 import com.translantik.utilities.Driver;
 import io.cucumber.java.en.And;
