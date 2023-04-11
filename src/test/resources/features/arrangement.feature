@@ -1,4 +1,4 @@
-
+@salesManagerFleet
 @reyhan
 Feature: As a user, I should be able to arrange vehicle table data under Fleet-Vehicle page
 
