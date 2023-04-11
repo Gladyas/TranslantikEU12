@@ -1,5 +1,6 @@
 package com.translantik.step_def;
 
+import com.translantik.pages.DashBoardPage;
 import com.translantik.pages.DashboardPage;
 import com.translantik.pages.FleetVehiclePage;
 import com.translantik.utilities.Driver;
@@ -10,7 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class DeleteCar_Step_Def {
 
-    DashboardPage dashboardPage=new DashboardPage();
+    DashBoardPage dashboardPage=new DashBoardPage();
     FleetVehiclePage fleetVehiclePage=new FleetVehiclePage();
     Actions act=new Actions(Driver.getDriver());
 
