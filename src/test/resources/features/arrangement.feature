@@ -5,7 +5,7 @@ Feature: As a user, I should be able to arrange vehicle table data under Fleet-V
 
 
 
-
+  @TRAN10-533
   Scenario:View per page button is displayed and clickable
     When view per page button is displayed
     Then view per page button is clickable
