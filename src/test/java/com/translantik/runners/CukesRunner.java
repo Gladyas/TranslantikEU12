@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         glue = "com/translantik/step_def",
 
         dryRun = false,
-        tags = "",
+        tags = "@wip",
         publish = false
 
 )

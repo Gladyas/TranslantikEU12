@@ -34,12 +34,29 @@ public class DashBoardPage extends BasePage {
     @FindBy(xpath="//span[.='Vehicles']")
     public  WebElement fleetVehicle;
 
+    @FindBy(xpath="//*[@id='main-menu']/ul/li[1]/a/span")
+    public  WebElement fleetDriver;
+
+    @FindBy(xpath="//span[@class='title title-level-2']")
+    public  WebElement fleetVehicleDriver;
+
+
+
 
     public void fleetVehicleClick() throws InterruptedException {
         fleetVehiclePage.waitUntilLoaderScreenDisappear();
         Thread.sleep(2000);
         actions.click(fleet).perform();
         actions.click(fleetVehicle).perform();
+        fleetVehiclePage.waitUntilLoaderScreenDisappear();
+        Thread.sleep(2000);
+    }
+
+    public void fleetVehicleClickDriver() throws InterruptedException {
+        fleetVehiclePage.waitUntilLoaderScreenDisappear();
+        Thread.sleep(2000);
+        actions.click(fleetDriver).perform();
+        actions.click(fleetVehicleDriver).perform();
         fleetVehiclePage.waitUntilLoaderScreenDisappear();
         Thread.sleep(2000);
     }

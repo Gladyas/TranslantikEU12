@@ -58,8 +58,7 @@ public class FleetVehiclePage extends BasePage {
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     public WebElement saveBut;
 
-
-    @FindBy(xpath = "//span[@id='oro_calendar_event_form_title-uid-64354175f2d1c-error']")
+    @FindBy(xpath = "//span[@class='validation-failed']")
     public WebElement errorMes;
 
 
