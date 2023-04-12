@@ -8,6 +8,7 @@ In the class we will be able to pass pre- & post- conditions to
 import com.translantik.pages.DashBoardPage;
 import com.translantik.pages.FleetVehiclePage;
 import com.translantik.pages.TranslantikLoginPage;
+import com.translantik.utilities.BrowserUtils;
 import com.translantik.utilities.ConfigurationReader;
 import com.translantik.utilities.Driver;
 import io.cucumber.java.After;
@@ -53,6 +54,7 @@ public class Hooks {
         translantikLoginPage.inputPassword.
                 sendKeys(ConfigurationReader.getProperty("salesManagerPassword"));
         translantikLoginPage.loginButton.click();
+        BrowserUtils.sleep(5);
         dashBoardPage.fleetVehicleClick();
     }
 

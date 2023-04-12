@@ -1,5 +1,5 @@
 @salesManagerFleet
-@reyhan
+
 Feature: As a user, I should be able to arrange vehicle table data under Fleet-Vehicle page
 
 
@@ -9,6 +9,7 @@ Feature: As a user, I should be able to arrange vehicle table data under Fleet-V
   Scenario:View per page button is displayed and clickable
     When view per page button is displayed
     Then view per page button is clickable
+
 
 
 
@@ -28,7 +29,7 @@ Feature: As a user, I should be able to arrange vehicle table data under Fleet-V
 
 
 
-
+ @reyhan
   Scenario: User can sort a column in ascending or descending order by clicking the column name
     When chassis column and location column is clicked
     Then user can sort columns in ascending order

@@ -14,8 +14,9 @@ public class FleetVehiclePage extends BasePage {
     @FindBy(xpath="//a[@class='dropdown-item']")
     public List<WebElement> allValues;
 
-    @FindBy(xpath="//th[@class='grid-cell grid-header-cell grid-header-cell-ChassisNumber sortable renderable shortenable-label number-cell']")
+    @FindBy(xpath="//th[contains(@class, 'grid-cell grid-header-cell grid-header-cell-ChassisNumber sortable')]")
     public WebElement chassisColumn;
+
 
     @FindBy(xpath="//th[@class='grid-cell grid-header-cell grid-header-cell-Location sortable renderable shortenable-label string-cell']")
     public WebElement locationColumn;
