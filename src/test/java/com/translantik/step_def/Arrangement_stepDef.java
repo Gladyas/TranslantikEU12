@@ -1,9 +1,13 @@
 package com.translantik.step_def;
 
+import com.translantik.pages.DashBoardPage;
 import com.translantik.pages.FleetVehiclePage;
+import com.translantik.pages.TranslantikLoginPage;
 import com.translantik.utilities.BrowserUtils;
+import com.translantik.utilities.ConfigurationReader;
 import com.translantik.utilities.Driver;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -18,6 +22,8 @@ public class Arrangement_stepDef {
 
     FleetVehiclePage fleetVehiclePage= new FleetVehiclePage();
     Actions actions=new Actions(Driver.getDriver());
+    TranslantikLoginPage translantikLoginPage=new TranslantikLoginPage();
+    DashBoardPage dashBoardPage=new DashBoardPage();
 
 
     @When("view per page button is displayed")
@@ -136,5 +142,19 @@ public class Arrangement_stepDef {
     }
 
 
+    @Given("user on fleet-vehicles page")
+    public void userOnFleetVehiclesPage() throws InterruptedException {
 
+        String loginUrl = ConfigurationReader.getProperty("translantik.url");
+        Driver.getDriver().get(loginUrl);
+        translantikLoginPage.inputUsername.
+                sendKeys(ConfigurationReader.getProperty("salesManagerUsername"));
+        translantikLoginPage.inputPassword.
+                sendKeys(ConfigurationReader.getProperty("salesManagerPassword"));
+        translantikLoginPage.loginButton.click();
+        BrowserUtils.sleep(5);
+        dashBoardPage.fleetVehicleClick();
+
+
+    }
 }
