@@ -50,7 +50,7 @@ public class Arrangement_stepDef {
 
     @Then("the value is twenty five by default")
     public void theValueIsTwentyFiveByDefault() {
-
+        BrowserUtils.sleep(2);
         String actualValue=  fleetVehiclePage.viewPerPageButton.getText();
         System.out.println("actualValue = " + actualValue);
         int expectedValue=25;
@@ -64,7 +64,7 @@ public class Arrangement_stepDef {
     @When("view per page button is clicked")
     public void viewPerPageButtonIsClicked() {
 
-        BrowserUtils.sleep(10);
+        BrowserUtils.sleep(3);
         // WebDriverWait wait=new WebDriverWait(Driver.getDriver(), 10);
         //wait.until(ExpectedConditions.visibilityOf(fleetVehiclePage.viewPerPageButton));
         fleetVehiclePage.viewPerPageButton.click();
@@ -142,18 +142,46 @@ public class Arrangement_stepDef {
     }
 
 
-    @Given("user on fleet-vehicles page")
-    public void userOnFleetVehiclesPage() throws InterruptedException {
 
-        String loginUrl = ConfigurationReader.getProperty("translantik.url");
-        Driver.getDriver().get(loginUrl);
-        translantikLoginPage.inputUsername.
-                sendKeys(ConfigurationReader.getProperty("salesManagerUsername"));
-        translantikLoginPage.inputPassword.
-                sendKeys(ConfigurationReader.getProperty("salesManagerPassword"));
-        translantikLoginPage.loginButton.click();
-        BrowserUtils.sleep(5);
-        dashBoardPage.fleetVehicleClick();
+
+
+
+    @When("user clicks on reset button")
+    public void user_clicks_on_reset_button() {
+        BrowserUtils.sleep(3);
+        fleetVehiclePage.resetButton.click();
+        BrowserUtils.sleep(3);
+
+
+
+
+
+    }
+    @Then("user don't have any sorting")
+    public void user_don_t_have_any_sorting() {
+       BrowserUtils.sleep(2);
+        String actualOrder= fleetVehiclePage.chassisColumn.getAttribute("class");
+        Assert.assertFalse(actualOrder.contains("ascending"));
+        Assert.assertFalse(actualOrder.contains("descending"));
+
+
+
+
+
+    }
+    @Then("user don't have any filtering")
+    public void user_don_t_have_any_filtering() {
+        BrowserUtils.sleep(3);
+        Assert.assertFalse(fleetVehiclePage.licencePlate.isSelected());
+    }
+
+
+
+
+    @And("user select licence plate from filters menu")
+    public void userSelectLicencePlateFromFiltersMenu() {
+        BrowserUtils.sleep(2);
+        fleetVehiclePage.licencePlate.click();
 
 
     }

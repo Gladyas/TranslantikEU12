@@ -68,7 +68,7 @@ public class Hooks {
         translantikLoginPage.inputPassword.
                 sendKeys(ConfigurationReader.getProperty("TruckDriverPassword"));
         translantikLoginPage.loginButton.click();
-        BrowserUtils.sleep(5);
+
         dashBoardPage.fleetVehicleClickDriver();
 
 

@@ -63,11 +63,17 @@ public class FleetVehiclePage extends BasePage {
 
 
 
+    @FindBy(xpath="//input[@id='ui-multiselect-0-0-option-0']")
+    public WebElement licencePlate;
+
+
+    @FindBy(xpath="//a[@data-size='10']")
+    public WebElement viewPerPageTen;
 
 
 
-
-
+    @FindBy(xpath="//a[@class='action btn reset-action mode-text-only']")
+    public WebElement resetButton;
 
 
 
