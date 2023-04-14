@@ -58,6 +58,7 @@ public class AddEvent_StepDef extends TranslantikLoginPage {
     public void userCanClickAddEventButton() {
         BrowserUtils.sleep(10);
         fleetVehiclePage.addEventBut.click();
+
     }
 
     @Then("Add Event page should pop up")
@@ -67,6 +68,8 @@ public class AddEvent_StepDef extends TranslantikLoginPage {
         String actualPage = fleetVehiclePage.addEventPage1.getText();
         System.out.println("actualPage = " + actualPage);
         Assert.assertEquals(expectedPage,actualPage);
+
+        fleetVehiclePage.cancelBut.click();
     }
 
     //-----------------------------------------------------------
@@ -76,6 +79,7 @@ public class AddEvent_StepDef extends TranslantikLoginPage {
     public void userCanClickSaveButton() {
         BrowserUtils.sleep(5);
         fleetVehiclePage.saveBut.click();
+
     }
 
     @Then("User should see the error message")
@@ -84,5 +88,7 @@ public class AddEvent_StepDef extends TranslantikLoginPage {
         String actualText = fleetVehiclePage.errorMes.getText();
         System.out.println("actualText = " + actualText);
         Assert.assertTrue(fleetVehiclePage.errorMes.isDisplayed());
+
+        fleetVehiclePage.cancelBut.click();
     }
 }

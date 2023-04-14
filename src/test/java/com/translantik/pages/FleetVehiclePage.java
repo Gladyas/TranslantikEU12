@@ -61,6 +61,9 @@ public class FleetVehiclePage extends BasePage {
     @FindBy(xpath = "//span[@class='validation-failed']")
     public WebElement errorMes;
 
+    @FindBy(xpath = "//button[@class='btn']")
+    public WebElement cancelBut;
+
 
 
     @FindBy(xpath="//input[@id='ui-multiselect-0-0-option-0']")
